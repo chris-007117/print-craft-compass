@@ -5,6 +5,7 @@ import capCommercial from "@/assets/cap-commercial.jpg";
 import capPackaging from "@/assets/cap-packaging.jpg";
 import capLargeformat from "@/assets/cap-largeformat.jpg";
 import capFinishing from "@/assets/cap-finishing.jpg";
+import { SEO, breadcrumbJsonLd, serviceJsonLd } from "@/components/SEO";
 
 const data: Record<string, { title: string; eyebrow: string; lede: string; img: string; specs: string[]; substrates: string[]; finishes: string[] }> = {
   "commercial-print": {

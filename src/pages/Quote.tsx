@@ -4,6 +4,7 @@ import { PageHero } from "@/components/PageHero";
 import { supabase } from "@/integrations/supabase/client";
 import { useToast } from "@/hooks/use-toast";
 import { ArrowRight, ArrowLeft, Check, Upload, FileText, X } from "lucide-react";
+import { SEO, breadcrumbJsonLd } from "@/components/SEO";
 
 const step1Schema = z.object({ project_type: z.string().min(1, "Select a project type") });
 const step2Schema = z.object({

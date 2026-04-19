@@ -4,6 +4,7 @@ import { PageHero } from "@/components/PageHero";
 import { supabase } from "@/integrations/supabase/client";
 import { useToast } from "@/hooks/use-toast";
 import { ArrowRight, Check, Package } from "lucide-react";
+import { SEO, breadcrumbJsonLd } from "@/components/SEO";
 
 const schema = z.object({
   name: z.string().trim().min(2).max(120),
