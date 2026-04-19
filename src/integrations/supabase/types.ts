@@ -14,7 +14,153 @@ export type Database = {
   }
   public: {
     Tables: {
-      [_ in never]: never
+      contacts: {
+        Row: {
+          company: string | null
+          created_at: string
+          email: string
+          file_url: string | null
+          id: string
+          message: string
+          name: string
+          subject: string
+        }
+        Insert: {
+          company?: string | null
+          created_at?: string
+          email: string
+          file_url?: string | null
+          id?: string
+          message: string
+          name: string
+          subject: string
+        }
+        Update: {
+          company?: string | null
+          created_at?: string
+          email?: string
+          file_url?: string | null
+          id?: string
+          message?: string
+          name?: string
+          subject?: string
+        }
+        Relationships: []
+      }
+      newsletter_signups: {
+        Row: {
+          created_at: string
+          email: string
+          id: string
+        }
+        Insert: {
+          created_at?: string
+          email: string
+          id?: string
+        }
+        Update: {
+          created_at?: string
+          email?: string
+          id?: string
+        }
+        Relationships: []
+      }
+      quote_requests: {
+        Row: {
+          company: string | null
+          created_at: string
+          email: string
+          file_url: string | null
+          finish: string | null
+          id: string
+          message: string | null
+          name: string
+          paper: string | null
+          phone: string | null
+          project_type: string
+          quantity: string | null
+          size: string | null
+          timeline: string | null
+        }
+        Insert: {
+          company?: string | null
+          created_at?: string
+          email: string
+          file_url?: string | null
+          finish?: string | null
+          id?: string
+          message?: string | null
+          name: string
+          paper?: string | null
+          phone?: string | null
+          project_type: string
+          quantity?: string | null
+          size?: string | null
+          timeline?: string | null
+        }
+        Update: {
+          company?: string | null
+          created_at?: string
+          email?: string
+          file_url?: string | null
+          finish?: string | null
+          id?: string
+          message?: string | null
+          name?: string
+          paper?: string | null
+          phone?: string | null
+          project_type?: string
+          quantity?: string | null
+          size?: string | null
+          timeline?: string | null
+        }
+        Relationships: []
+      }
+      sample_requests: {
+        Row: {
+          address_line1: string
+          address_line2: string | null
+          city: string
+          company: string | null
+          country: string
+          created_at: string
+          email: string
+          id: string
+          industry: string | null
+          name: string
+          postal_code: string
+          state: string
+        }
+        Insert: {
+          address_line1: string
+          address_line2?: string | null
+          city: string
+          company?: string | null
+          country?: string
+          created_at?: string
+          email: string
+          id?: string
+          industry?: string | null
+          name: string
+          postal_code: string
+          state: string
+        }
+        Update: {
+          address_line1?: string
+          address_line2?: string | null
+          city?: string
+          company?: string | null
+          country?: string
+          created_at?: string
+          email?: string
+          id?: string
+          industry?: string | null
+          name?: string
+          postal_code?: string
+          state?: string
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
