@@ -72,7 +72,7 @@ export const Footer = () => {
               <li><Link to="/about" className="hover:text-copper">About</Link></li>
               <li><Link to="/work" className="hover:text-copper">Case Studies</Link></li>
               <li><Link to="/industries" className="hover:text-copper">Industries</Link></li>
-              <li><Link to="/insights" className="hover:text-copper">Insights</Link></li>
+              <li><Link to="/blog" className="hover:text-copper">Blog</Link></li>
               <li><Link to="/contact" className="hover:text-copper">Contact</Link></li>
             </ul>
           </div>

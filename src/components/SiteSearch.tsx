@@ -10,6 +10,7 @@ import {
   CommandList,
   CommandSeparator,
 } from "@/components/ui/command";
+import { fetchPublishedPosts, type BlogPost } from "@/lib/blog";
 
 type Entry = {
   title: string;
@@ -32,67 +33,75 @@ const work: Entry[] = [
   { title: "All Case Studies", description: "Selected projects with measurable outcomes.", url: "/work", keywords: "portfolio case studies work" },
 ];
 
-const insights: Entry[] = [
-  { title: "Why G7 calibration matters across borders", description: "How master calibration solves global brand color failures.", url: "/insights", keywords: "g7 color calibration brand global print insight article" },
-  { title: "Soft-touch laminations: a spec sheet", description: "Specifying the right film for premium unboxing.", url: "/insights", keywords: "soft touch lamination film packaging unboxing spec premium" },
-  { title: "Beyond FSC — the deinking question", description: "Why deinkability matters more than the chain-of-custody label.", url: "/insights", keywords: "fsc sustainability deink recycled fiber paper environmental" },
-  { title: "All Insights", description: "Quarterly long-form notes from the press hall.", url: "/insights", keywords: "blog articles insights" },
-];
-
 const pages: Entry[] = [
   { title: "Request a Quote", description: "Tell us about the project — paper, finish, schedule, price in 24 hours.", url: "/quote", keywords: "quote price estimate rfq request" },
   { title: "Order Sample Pack", description: "Free curated paper, foil, and finish samples shipped to you.", url: "/samples", keywords: "samples paper stock swatch free packet" },
   { title: "Contact", description: "Talk to a print strategist. Phoenix · Scottsdale.", url: "/contact", keywords: "contact phone email address office location" },
   { title: "About Veridia Press", description: "Family-rooted craft. Premium commercial print and packaging.", url: "/about", keywords: "about company team story mission history" },
   { title: "Industries We Serve", description: "Healthcare, technology, consumer, education.", url: "/industries", keywords: "industries vertical healthcare technology consumer cannabis beverage cosmetics supplement" },
-];
-
-const ALL: { group: string; items: Entry[] }[] = [
-  { group: "Capabilities", items: capabilities },
-  { group: "Case Studies", items: work },
-  { group: "Insights", items: insights },
-  { group: "Pages", items: pages },
+  { title: "All Blog Articles", description: "Guides, trends, and expertise from the press hall.", url: "/blog", keywords: "blog articles insights guides" },
 ];
 
 interface Props { open: boolean; onOpenChange: (open: boolean) => void; }
 
 export const SiteSearch = ({ open, onOpenChange }: Props) => {
   const navigate = useNavigate();
+  const [posts, setPosts] = useState<BlogPost[]>([]);
+
+  useEffect(() => {
+    if (!open || posts.length > 0) return;
+    fetchPublishedPosts().then(setPosts).catch(() => setPosts([]));
+  }, [open, posts.length]);
 
   const go = (url: string) => {
     onOpenChange(false);
     navigate(url);
   };
 
+  const blogEntries: Entry[] = posts.map((p) => ({
+    title: p.title,
+    description: p.excerpt || p.meta_description,
+    url: `/blog/${p.slug}`,
+    keywords: `${p.category || ""} ${(p.tags || []).join(" ")} ${p.focus_keyword || ""}`,
+  }));
+
+  const ALL: { group: string; items: Entry[] }[] = [
+    { group: "Capabilities", items: capabilities },
+    { group: "Case Studies", items: work },
+    { group: "Blog Articles", items: blogEntries },
+    { group: "Pages", items: pages },
+  ];
+
   return (
     <CommandDialog open={open} onOpenChange={onOpenChange}>
-      <CommandInput placeholder="Search capabilities, case studies, insights…" />
+      <CommandInput placeholder="Search capabilities, case studies, blog…" />
       <CommandList>
-        <CommandEmpty>No results — try "packaging", "ROI", or "G7".</CommandEmpty>
+        <CommandEmpty>No results — try "packaging", "ROI", or "soy ink".</CommandEmpty>
         {ALL.map((section, i) => (
-          <div key={section.group}>
-            {i > 0 && <CommandSeparator />}
-            <CommandGroup heading={section.group}>
-              {section.items.map((item) => (
-                <CommandItem
-                  key={`${section.group}-${item.title}`}
-                  value={`${item.title} ${item.description} ${item.keywords}`}
-                  onSelect={() => go(item.url)}
-                  className="flex flex-col items-start gap-0.5 py-2.5"
-                >
-                  <span className="font-medium text-sm">{item.title}</span>
-                  <span className="text-xs text-muted-foreground line-clamp-1">{item.description}</span>
-                </CommandItem>
-              ))}
-            </CommandGroup>
-          </div>
+          section.items.length > 0 && (
+            <div key={section.group}>
+              {i > 0 && <CommandSeparator />}
+              <CommandGroup heading={section.group}>
+                {section.items.map((item) => (
+                  <CommandItem
+                    key={`${section.group}-${item.url}-${item.title}`}
+                    value={`${item.title} ${item.description} ${item.keywords}`}
+                    onSelect={() => go(item.url)}
+                    className="flex flex-col items-start gap-0.5 py-2.5"
+                  >
+                    <span className="font-medium text-sm">{item.title}</span>
+                    <span className="text-xs text-muted-foreground line-clamp-1">{item.description}</span>
+                  </CommandItem>
+                ))}
+              </CommandGroup>
+            </div>
+          )
         ))}
       </CommandList>
     </CommandDialog>
   );
 };
 
-// Hook: bind ⌘K / Ctrl+K to open search
 export const useSearchHotkey = (setOpen: (open: boolean) => void) => {
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => {
