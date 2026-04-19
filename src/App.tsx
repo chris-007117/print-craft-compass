@@ -15,6 +15,10 @@ import Insights from "./pages/Insights";
 import Quote from "./pages/Quote";
 import Samples from "./pages/Samples";
 import Contact from "./pages/Contact";
+import Privacy from "./pages/Privacy";
+import Terms from "./pages/Terms";
+import Accessibility from "./pages/Accessibility";
+import AIPolicy from "./pages/AIPolicy";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -38,6 +42,10 @@ const App = () => (
             <Route path="/quote" element={<Quote />} />
             <Route path="/samples" element={<Samples />} />
             <Route path="/contact" element={<Contact />} />
+            <Route path="/privacy" element={<Privacy />} />
+            <Route path="/terms" element={<Terms />} />
+            <Route path="/accessibility" element={<Accessibility />} />
+            <Route path="/ai-policy" element={<AIPolicy />} />
             <Route path="*" element={<NotFound />} />
           </Route>
         </Routes>
