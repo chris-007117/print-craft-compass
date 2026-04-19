@@ -247,8 +247,21 @@ const Index = () => {
       {/* TESTIMONIALS */}
       <section className="py-20 md:py-28 bg-bone-warm">
         <div className="container-x">
-          <span className="eyebrow text-copper">What clients say</span>
-          <h2 className="display-md mt-4 max-w-3xl">A partner that protects the brand.</h2>
+          <div className="flex flex-wrap items-end justify-between gap-6">
+            <div>
+              <span className="eyebrow text-copper">What clients say</span>
+              <h2 className="display-md mt-4 max-w-3xl">A partner that protects the brand.</h2>
+            </div>
+            <div className="flex items-center gap-4 border border-foreground/10 bg-background px-5 py-4">
+              <div className="flex items-center gap-0.5 text-copper">
+                {[0,1,2,3,4].map(i => <Star key={i} className="h-4 w-4 fill-current" />)}
+              </div>
+              <div className="text-sm">
+                <p className="font-semibold leading-tight">4.9 / 5.0 <span className="text-muted-foreground font-normal">· Verified buyers</span></p>
+                <p className="text-xs text-muted-foreground mt-0.5">Based on 287 client reviews · Updated weekly</p>
+              </div>
+            </div>
+          </div>
 
           <div className="mt-12 bg-background p-8 md:p-14 max-w-4xl">
             <p className="font-display text-2xl md:text-3xl leading-snug text-foreground">
