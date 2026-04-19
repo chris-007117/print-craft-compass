@@ -1,29 +1,36 @@
 import { PageHero } from "@/components/PageHero";
 import facility from "@/assets/facility.jpg";
 import { Award, Leaf, ShieldCheck, Users } from "lucide-react";
+import { SEO, breadcrumbJsonLd } from "@/components/SEO";
 
 const About = () => (
   <>
+    <SEO
+      title="About — Family-rooted craft. Premium execution."
+      description="Veridia Press: a Phoenix-based commercial printer building the next great American print and packaging company. Family-rooted craft, $50M-grade execution from day one."
+      path="/about"
+      jsonLd={breadcrumbJsonLd([{ name: "Home", path: "/" }, { name: "About", path: "/about" }])}
+    />
     <PageHero
-      eyebrow="About Forma & Press"
-      title="Four decades of getting it exactly right."
-      lede="Founded in 1987 by Eleanor and David Forma in a 4,000-square-foot San Jose warehouse. Still family-owned. Now two facilities, 142 employees, and a single obsession: print that protects the brands we serve."
+      eyebrow="About Veridia Press"
+      title="Built to be the next great American print company."
+      lede="Founded in Scottsdale, Arizona by a family of letterpress printers, structural designers, and packaging engineers. Two facilities, growing fast, with one obsession: print that protects the brands we serve."
     />
 
     <section className="py-20">
       <div className="container-x grid lg:grid-cols-2 gap-12 items-center">
-        <img src={facility} alt="Forma & Press production facility" width={1600} height={1024} loading="lazy" className="aspect-[4/3] object-cover" />
+        <img src={facility} alt="Veridia Press production facility" width={1600} height={1024} loading="lazy" className="aspect-[4/3] object-cover" />
         <div>
           <span className="eyebrow text-copper">The story</span>
           <h2 className="display-md mt-4">Built one project at a time.</h2>
           <p className="mt-6 text-foreground/80 leading-relaxed">
-            Eleanor learned the trade at her father's letterpress shop in Oakland. David came from optical engineering. Together they bought a single Heidelberg KOR in 1987 with the proceeds from selling their house and a loan from Eleanor's mother.
+            Veridia Press was founded by a family of printers, structural packaging designers, and operations engineers who'd spent decades inside the country's most demanding print environments. The thesis: take the standards big-three packaging firms reserve for Fortune 500 accounts, and offer them to the brands building the next generation of beverage, supplement, cannabis, and cosmetic categories.
           </p>
           <p className="mt-4 text-foreground/80 leading-relaxed">
-            The deal was simple: take the work no one else wanted to take seriously — medical IFUs with critical color requirements, packaging for tiny consumer brands, complex catalogs for early-stage tech. Make it perfect. Hand-deliver it. Take the call when something goes wrong.
+            The name comes from Latin: <em>veridicus</em> — truth-telling — and <em>viridis</em> — verdant, alive. Truth in the press sheet. Life in the brand it carries.
           </p>
           <p className="mt-4 text-foreground/80 leading-relaxed">
-            Thirty-eight years later, the Heidelberg is in the lobby. The work is the same. So is the standard.
+            Family-owned. G7 Master qualified. Built to be worth a hundred million one day, and to print every job along the way like it's the one the company is judged on.
           </p>
         </div>
       </div>

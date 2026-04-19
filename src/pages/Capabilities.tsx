@@ -5,6 +5,7 @@ import capCommercial from "@/assets/cap-commercial.jpg";
 import capPackaging from "@/assets/cap-packaging.jpg";
 import capLargeformat from "@/assets/cap-largeformat.jpg";
 import capFinishing from "@/assets/cap-finishing.jpg";
+import { SEO, breadcrumbJsonLd } from "@/components/SEO";
 
 const items = [
   { slug: "commercial-print", title: "Commercial Print", img: capCommercial, body: "Annual reports, brochures, catalogs, direct mail. Heidelberg XL 106 offset and HP Indigo 12000 digital. Run lengths 250 to 250,000.", specs: ["6-color offset + coater", "HP Indigo 12000 digital", "G7 Master color", "Variable data printing"] },
@@ -15,10 +16,16 @@ const items = [
 
 const Capabilities = () => (
   <>
+    <SEO
+      title="Capabilities — Print, Packaging, Large Format, Finishing"
+      description="Offset, digital, folding cartons, pressure-sensitive labels, wide-format, foil, emboss, kitting, fulfillment. Color-managed end to end. G7 Master qualified."
+      path="/capabilities"
+      jsonLd={breadcrumbJsonLd([{ name: "Home", path: "/" }, { name: "Capabilities", path: "/capabilities" }])}
+    />
     <PageHero
       eyebrow="Capabilities"
       title="Everything under one roof. Color-managed end to end."
-      lede="Press, packaging, large format, finishing, and fulfillment in two California facilities. One project manager, one quote, one accountable team."
+      lede="Press, packaging, large format, finishing, and fulfillment in two Arizona facilities. One project manager, one quote, one accountable team."
     />
 
     <section className="py-20">

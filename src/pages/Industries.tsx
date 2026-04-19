@@ -2,12 +2,13 @@ import { useState } from "react";
 import { PageHero } from "@/components/PageHero";
 import { Link } from "react-router-dom";
 import { ArrowRight, HeartPulse, Cpu, ShoppingBag, GraduationCap } from "lucide-react";
+import { SEO, breadcrumbJsonLd } from "@/components/SEO";
 
 const tabs = [
   {
     id: "healthcare", label: "Healthcare", Icon: HeartPulse,
     headline: "Validated for the work that can't go wrong.",
-    body: "From IFUs and surgical kit packaging to clinical trial materials, we operate inside the workflows our medical-device clients require. Document-controlled procedures, lot traceability, change-control management, and validated color make Forma & Press the partner of choice for FDA-regulated brands.",
+    body: "From IFUs and surgical kit packaging to clinical trial materials, we operate inside the workflows our medical-device clients require. Document-controlled procedures, lot traceability, change-control management, and validated color make Veridia Press the partner of choice for FDA-regulated brands.",
     bullets: ["FDA 21 CFR Part 820 aligned procedures", "ISO 13485 process compatibility", "Sterile-barrier-ready packaging", "Controlled-document fulfillment", "Full chain-of-custody traceability"],
     clients: ["Meridian Health", "NovaCardio", "Helix Surgical", "Pacific MicroDevice", "Stratos Bio"],
   },
@@ -15,6 +16,7 @@ const tabs = [
     id: "technology", label: "Technology", Icon: Cpu,
     headline: "Launch-ready unboxing at global scale.",
     body: "Hardware launches and developer events demand color, schedule, and structural craft that match the product. We've shipped six- and seven-figure carton runs to launch dates that can't slip — and managed reverse logistics for refurb programs at scale.",
+
     bullets: ["Soft-touch matte and copper foil packaging", "Developer kits and event production", "On-package sustainability storytelling", "Global merge-in-transit fulfillment", "API-driven order integration"],
     clients: ["Lumen AI", "Orbit Robotics", "Foundry42", "Northpoint", "Arc Systems"],
   },

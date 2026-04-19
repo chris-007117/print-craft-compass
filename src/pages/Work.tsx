@@ -3,6 +3,7 @@ import { PageHero } from "@/components/PageHero";
 import caseMed from "@/assets/case-meddevice.jpg";
 import caseTech from "@/assets/case-tech.jpg";
 import { ArrowRight } from "lucide-react";
+import { SEO, breadcrumbJsonLd } from "@/components/SEO";
 
 const cases = [
   { slug: "meddevice-surgical-kit", img: caseMed, client: "MedDevice Co.", title: "Surgeon kit reimagined", tag: "Healthcare", stats: ["605% ROI", "42% response lift", "$4.2M incremental"] },
@@ -11,6 +12,12 @@ const cases = [
 
 const Work = () => (
   <>
+    <SEO
+      title="Work — Case Studies with Measurable Outcomes"
+      description="Veridia Press case studies: ROI math, response lift, on-time delivery at scale. Healthcare and technology projects with the numbers behind the work."
+      path="/work"
+      jsonLd={breadcrumbJsonLd([{ name: "Home", path: "/" }, { name: "Work", path: "/work" }])}
+    />
     <PageHero
       eyebrow="Work"
       title="Case studies with numbers, not adjectives."

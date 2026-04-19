@@ -1,5 +1,6 @@
 import { PageHero } from "@/components/PageHero";
 import { ArrowRight } from "lucide-react";
+import { SEO, breadcrumbJsonLd } from "@/components/SEO";
 
 const posts = [
   { tag: "Color", date: "Mar 12, 2026", title: "Why G7 calibration matters when your brand crosses borders", excerpt: "Brand color is the single most-cited print failure in global launches. Here's how G7 master calibration solves it — and what to ask your printer to prove it." },
@@ -9,6 +10,12 @@ const posts = [
 
 const Insights = () => (
   <>
+    <SEO
+      title="Insights — Notes from the Press Hall"
+      description="Practical print thinking for design directors, brand teams, and print buyers. G7 color, soft-touch laminations, sustainable substrates, and more."
+      path="/insights"
+      jsonLd={breadcrumbJsonLd([{ name: "Home", path: "/" }, { name: "Insights", path: "/insights" }])}
+    />
     <PageHero
       eyebrow="Insights"
       title="Notes from the press hall."
