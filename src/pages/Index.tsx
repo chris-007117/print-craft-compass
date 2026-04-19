@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
-import { ArrowRight, Play, Award, Leaf, ShieldCheck, FileBadge } from "lucide-react";
+import { ArrowRight, Play, Award, Leaf, ShieldCheck, FileBadge, Star } from "lucide-react";
 import { ClientLogos } from "@/components/ClientLogos";
+import { useEffect } from "react";
 import heroPress from "@/assets/hero-press.jpg";
 import capCommercial from "@/assets/cap-commercial.jpg";
 import capPackaging from "@/assets/cap-packaging.jpg";
@@ -35,6 +36,12 @@ const testimonials = [
 const Index = () => {
   const [activeIndustry, setActiveIndustry] = useState("healthcare");
   const [tIdx, setTIdx] = useState(0);
+
+  // Auto-rotate testimonials every 7s, pausing on manual selection.
+  useEffect(() => {
+    const id = setInterval(() => setTIdx((i) => (i + 1) % testimonials.length), 7000);
+    return () => clearInterval(id);
+  }, []);
 
   return (
     <>
