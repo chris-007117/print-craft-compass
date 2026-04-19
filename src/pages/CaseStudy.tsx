@@ -51,6 +51,20 @@ const CaseStudy = () => {
 
   return (
     <>
+      <SEO
+        title={`${c.title} — Case Study`}
+        description={c.lede}
+        path={`/work/${slug}`}
+        type="article"
+        jsonLd={[
+          breadcrumbJsonLd([
+            { name: "Home", path: "/" },
+            { name: "Work", path: "/work" },
+            { name: c.title, path: `/work/${slug}` },
+          ]),
+          articleJsonLd(c.title, c.lede, `/work/${slug}`, "2026-01-15"),
+        ]}
+      />
       <PageHero eyebrow={c.eyebrow} title={c.title} lede={c.lede} />
 
       <section className="py-16">

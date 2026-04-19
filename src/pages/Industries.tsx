@@ -42,6 +42,12 @@ const Industries = () => {
 
   return (
     <>
+      <SEO
+        title="Industries — Healthcare, Tech, Consumer, Education"
+        description="Specialized print and packaging for FDA-regulated healthcare, hardware launches, premium consumer brands, and higher education."
+        path="/industries"
+        jsonLd={breadcrumbJsonLd([{ name: "Home", path: "/" }, { name: "Industries", path: "/industries" }])}
+      />
       <PageHero
         eyebrow="Industries"
         title="Specialized for the regulated, the premium, and the complex."

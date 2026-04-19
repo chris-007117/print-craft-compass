@@ -109,7 +109,7 @@ const Quote = () => {
             <div className="h-20 w-20 rounded-full bg-copper/15 mx-auto flex items-center justify-center">
               <Check className="h-10 w-10 text-copper" />
             </div>
-            <p className="mt-8 text-muted-foreground">For urgent projects, call <a href="tel:+14085551987" className="text-copper font-semibold">408.555.1987</a> and reference your email address.</p>
+            <p className="mt-8 text-muted-foreground">For urgent projects, call <a href="tel:+16025551987" className="text-copper font-semibold">602.555.1987</a> and reference your email address.</p>
           </div>
         </section>
       </>
@@ -118,6 +118,12 @@ const Quote = () => {
 
   return (
     <>
+      <SEO
+        title="Request a Quote — Print, Packaging, Labels"
+        description="Tell us about your print or packaging project. Senior PM responds with paper, schedule, and pricing within 24 hours."
+        path="/quote"
+        jsonLd={breadcrumbJsonLd([{ name: "Home", path: "/" }, { name: "Quote", path: "/quote" }])}
+      />
       <PageHero eyebrow="Request a Quote" title="Tell us about the project." lede="Four short steps. We'll come back with paper recommendations, schedule, and pricing within 24 hours." />
 
       <section className="py-16">

@@ -67,6 +67,12 @@ const Contact = () => {
 
   return (
     <>
+      <SEO
+        title="Contact — Phoenix & Scottsdale Print Strategists"
+        description="Talk to a Veridia Press strategist. Senior PM responds within 1 business day. Phoenix · Scottsdale, Arizona."
+        path="/contact"
+        jsonLd={breadcrumbJsonLd([{ name: "Home", path: "/" }, { name: "Contact", path: "/contact" }])}
+      />
       <PageHero eyebrow="Contact" title="Talk to a real human, not a chatbot." lede="A senior project manager will reply within 1 business day. Faster if you call." />
 
       <section className="py-16">
