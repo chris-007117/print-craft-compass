@@ -4,6 +4,7 @@ import { PageHero } from "@/components/PageHero";
 import { supabase } from "@/integrations/supabase/client";
 import { useToast } from "@/hooks/use-toast";
 import { ArrowRight, Check, Phone, Mail, MapPin, Upload, FileText, X } from "lucide-react";
+import { SEO, breadcrumbJsonLd } from "@/components/SEO";
 
 const schema = z.object({
   name: z.string().trim().min(2).max(120),
@@ -66,24 +67,30 @@ const Contact = () => {
 
   return (
     <>
+      <SEO
+        title="Contact — Phoenix & Scottsdale Print Strategists"
+        description="Talk to a Veridia Press strategist. Senior PM responds within 1 business day. Phoenix · Scottsdale, Arizona."
+        path="/contact"
+        jsonLd={breadcrumbJsonLd([{ name: "Home", path: "/" }, { name: "Contact", path: "/contact" }])}
+      />
       <PageHero eyebrow="Contact" title="Talk to a real human, not a chatbot." lede="A senior project manager will reply within 1 business day. Faster if you call." />
 
       <section className="py-16">
         <div className="container-x grid lg:grid-cols-12 gap-10">
           <aside className="lg:col-span-4 space-y-8">
             <div>
-              <p className="eyebrow text-copper mb-3">San Jose HQ</p>
-              <p className="font-display text-lg uppercase">Forma & Press</p>
-              <p className="text-sm text-muted-foreground mt-2 flex gap-2"><MapPin className="h-4 w-4 mt-0.5 flex-shrink-0" />2840 Industrial Way<br/>San Jose, CA 95131</p>
-              <p className="text-sm mt-3 flex gap-2 items-center"><Phone className="h-4 w-4 text-copper" /><a href="tel:+14085551987" className="hover:text-copper">408.555.1987</a></p>
-              <p className="text-sm flex gap-2 items-center mt-1.5"><Mail className="h-4 w-4 text-copper" /><a href="mailto:hello@formaandpress.com" className="hover:text-copper">hello@formaandpress.com</a></p>
-              <p className="text-xs text-muted-foreground mt-2">Mon–Fri 7a–7p PT</p>
+              <p className="eyebrow text-copper mb-3">Scottsdale HQ</p>
+              <p className="font-display text-lg uppercase">Veridia Press</p>
+              <p className="text-sm text-muted-foreground mt-2 flex gap-2"><MapPin className="h-4 w-4 mt-0.5 flex-shrink-0" />8410 N Scottsdale Rd<br/>Scottsdale, AZ 85253</p>
+              <p className="text-sm mt-3 flex gap-2 items-center"><Phone className="h-4 w-4 text-copper" /><a href="tel:+16025551987" className="hover:text-copper">602.555.1987</a></p>
+              <p className="text-sm flex gap-2 items-center mt-1.5"><Mail className="h-4 w-4 text-copper" /><a href="mailto:hello@veridiapress.com" className="hover:text-copper">hello@veridiapress.com</a></p>
+              <p className="text-xs text-muted-foreground mt-2">Mon–Fri 7a–7p MT</p>
             </div>
             <div>
-              <p className="eyebrow text-copper mb-3">Sacramento</p>
-              <p className="text-sm text-muted-foreground flex gap-2"><MapPin className="h-4 w-4 mt-0.5 flex-shrink-0" />1112 North 16th St<br/>Sacramento, CA 95811</p>
-              <p className="text-sm mt-3 flex gap-2 items-center"><Phone className="h-4 w-4 text-copper" /><a href="tel:+19165551987" className="hover:text-copper">916.555.1987</a></p>
-              <p className="text-xs text-muted-foreground mt-2">Mon–Fri 7a–6p PT</p>
+              <p className="eyebrow text-copper mb-3">Phoenix Production</p>
+              <p className="text-sm text-muted-foreground flex gap-2"><MapPin className="h-4 w-4 mt-0.5 flex-shrink-0" />4520 W Buckeye Rd<br/>Phoenix, AZ 85043</p>
+              <p className="text-sm mt-3 flex gap-2 items-center"><Phone className="h-4 w-4 text-copper" /><a href="tel:+16025552987" className="hover:text-copper">602.555.2987</a></p>
+              <p className="text-xs text-muted-foreground mt-2">Mon–Fri 7a–6p MT</p>
             </div>
 
             <div className="aspect-[4/3] bg-charcoal flex items-center justify-center text-bone/40 text-xs uppercase tracking-wider">

@@ -1,62 +1,70 @@
-@import url('https://fonts.googleapis.com/css2?family=Archivo+Narrow:wght@500;600;700&family=Inter:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Manrope:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* Forma & Press — premium commercial print design system.
-   All colors HSL. Charcoal base, bone white, molten copper accent. */
+/* Veridia Press — premium commercial print + packaging design system.
+   All colors HSL. Charcoal base, ivory surface, burnished gold accent, deep teal secondary. */
 
 @layer base {
   :root {
-    /* Bone white surface */
-    --background: 40 22% 95%;
-    --foreground: 220 12% 8%;
+    /* Ivory surface */
+    --background: 45 25% 96%;
+    --foreground: 220 18% 10%;
 
     --card: 0 0% 100%;
-    --card-foreground: 220 12% 8%;
+    --card-foreground: 220 18% 10%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 220 12% 8%;
+    --popover-foreground: 220 18% 10%;
 
     /* Charcoal as primary */
-    --primary: 220 12% 8%;
-    --primary-foreground: 40 22% 95%;
+    --primary: 220 18% 10%;
+    --primary-foreground: 45 25% 96%;
 
-    --secondary: 40 14% 88%;
-    --secondary-foreground: 220 12% 8%;
+    --secondary: 178 60% 21%;
+    --secondary-foreground: 45 25% 96%;
 
     --muted: 40 14% 90%;
     --muted-foreground: 220 8% 38%;
 
-    /* Molten copper accent */
-    --accent: 18 76% 45%;
-    --accent-foreground: 40 22% 95%;
-    --accent-glow: 22 88% 58%;
+    /* Burnished gold accent */
+    --accent: 43 56% 54%;
+    --accent-foreground: 220 18% 10%;
+    --accent-glow: 43 70% 64%;
 
-    --destructive: 0 70% 45%;
-    --destructive-foreground: 40 22% 95%;
+    --destructive: 8 60% 49%;
+    --destructive-foreground: 45 25% 96%;
 
     --border: 220 8% 86%;
     --input: 220 8% 86%;
-    --ring: 18 76% 45%;
+    --ring: 43 56% 54%;
 
     --radius: 0.25rem;
 
-    /* Custom tokens */
-    --charcoal: 220 14% 6%;
-    --charcoal-soft: 220 12% 12%;
-    --slate-soft: 220 8% 22%;
-    --bone: 40 22% 95%;
-    --bone-warm: 38 30% 92%;
-    --copper: 18 76% 45%;
-    --copper-bright: 22 88% 58%;
-    --copper-deep: 16 70% 35%;
+    /* Custom tokens — gold + teal premium palette */
+    --charcoal: 222 22% 6%;
+    --charcoal-soft: 222 18% 11%;
+    --slate-soft: 220 12% 22%;
+    --bone: 45 25% 96%;
+    --bone-warm: 42 30% 93%;
 
-    --gradient-sunburst: radial-gradient(circle at 50% 50%, hsl(var(--copper) / 0.45) 0%, hsl(var(--copper) / 0.15) 35%, transparent 70%);
-    --gradient-copper: linear-gradient(135deg, hsl(var(--copper)) 0%, hsl(var(--copper-bright)) 100%);
-    --shadow-deep: 0 30px 80px -20px hsl(220 14% 6% / 0.6);
-    --shadow-copper: 0 20px 60px -15px hsl(var(--copper) / 0.5);
+    /* "copper" tokens are kept as keys for backwards-compat across components,
+       but now hold the burnished gold + deep teal premium palette. */
+    --copper: 43 56% 54%;          /* burnished gold #C9A84C */
+    --copper-bright: 43 70% 64%;   /* lifted gold */
+    --copper-deep: 178 60% 21%;    /* deep teal #1A5C5A — secondary depth */
+
+    --gold: 43 56% 54%;
+    --gold-bright: 43 70% 64%;
+    --teal-deep: 178 60% 21%;
+    --teal-darker: 178 70% 14%;
+
+    --gradient-sunburst: radial-gradient(circle at 50% 50%, hsl(var(--gold) / 0.45) 0%, hsl(var(--gold) / 0.15) 35%, transparent 70%);
+    --gradient-gold: linear-gradient(135deg, hsl(var(--gold)) 0%, hsl(var(--gold-bright)) 100%);
+    --shadow-deep: 0 30px 80px -20px hsl(222 22% 6% / 0.6);
+    --shadow-gold: 0 20px 60px -15px hsl(var(--gold) / 0.5);
     --hairline: 1px solid hsl(var(--foreground) / 0.12);
 
     --sidebar-background: 0 0% 98%;
@@ -66,7 +74,7 @@
     --sidebar-accent: 240 4.8% 95.9%;
     --sidebar-accent-foreground: 240 5.9% 10%;
     --sidebar-border: 220 13% 91%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --sidebar-ring: 43 56% 54%;
   }
 }
 
@@ -77,17 +85,31 @@
 
   body {
     @apply bg-background text-foreground antialiased;
-    font-family: 'Inter', system-ui, sans-serif;
+    font-family: 'Manrope', system-ui, sans-serif;
     font-feature-settings: 'ss01', 'cv11';
   }
 
   h1, h2, h3, h4, .font-display {
-    font-family: 'Archivo Narrow', 'Inter', sans-serif;
+    font-family: 'Space Grotesk', 'Manrope', sans-serif;
     font-weight: 700;
-    letter-spacing: -0.01em;
+    letter-spacing: -0.015em;
   }
 
-  ::selection { background: hsl(var(--copper) / 0.3); }
+  .font-mono, code, kbd, pre {
+    font-family: 'JetBrains Mono', ui-monospace, monospace;
+  }
+
+  ::selection { background: hsl(var(--gold) / 0.3); }
+
+  /* Respect reduced motion globally */
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
 }
 
 @layer components {
@@ -103,24 +125,24 @@
   }
 
   .display-xl {
-    font-family: 'Archivo Narrow', sans-serif;
+    font-family: 'Space Grotesk', sans-serif;
     @apply text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold leading-[0.95] tracking-tight uppercase;
   }
   .display-lg {
-    font-family: 'Archivo Narrow', sans-serif;
+    font-family: 'Space Grotesk', sans-serif;
     @apply text-4xl sm:text-5xl md:text-6xl font-bold leading-[1] tracking-tight uppercase;
   }
   .display-md {
-    font-family: 'Archivo Narrow', sans-serif;
+    font-family: 'Space Grotesk', sans-serif;
     @apply text-3xl sm:text-4xl md:text-5xl font-bold leading-[1.05] tracking-tight uppercase;
   }
 
   .btn-copper {
     @apply inline-flex items-center justify-center gap-2 px-6 py-3 text-sm font-semibold uppercase tracking-wider transition-all;
-    background: hsl(var(--copper));
-    color: hsl(var(--bone));
+    background: hsl(var(--gold));
+    color: hsl(var(--charcoal));
   }
-  .btn-copper:hover { background: hsl(var(--copper-bright)); transform: translateY(-1px); box-shadow: var(--shadow-copper); }
+  .btn-copper:hover { background: hsl(var(--gold-bright)); transform: translateY(-1px); box-shadow: var(--shadow-gold); }
 
   .btn-ghost-light {
     @apply inline-flex items-center justify-center gap-2 px-6 py-3 text-sm font-semibold uppercase tracking-wider transition-all;
@@ -138,5 +160,15 @@
 
   .sunburst {
     background-image: var(--gradient-sunburst);
+  }
+
+  /* Subtle film-grain noise overlay for premium dark sections */
+  .noise::after {
+    content: '';
+    position: absolute; inset: 0;
+    pointer-events: none;
+    opacity: 0.04;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/></filter><rect width='100%' height='100%' filter='url(%23n)' opacity='0.6'/></svg>");
+    mix-blend-mode: overlay;
   }
 }

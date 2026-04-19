@@ -4,6 +4,7 @@ import { PageHero } from "@/components/PageHero";
 import { supabase } from "@/integrations/supabase/client";
 import { useToast } from "@/hooks/use-toast";
 import { ArrowRight, Check, Package } from "lucide-react";
+import { SEO, breadcrumbJsonLd } from "@/components/SEO";
 
 const schema = z.object({
   name: z.string().trim().min(2).max(120),
@@ -68,6 +69,12 @@ const Samples = () => {
 
   return (
     <>
+      <SEO
+        title="Free Sample Pack — Premium Substrates & Finishes"
+        description="Order a free curated pack of premium paper, foil, soft-touch, and structural packaging samples. Shipped anywhere in the US."
+        path="/samples"
+        jsonLd={breadcrumbJsonLd([{ name: "Home", path: "/" }, { name: "Samples", path: "/samples" }])}
+      />
       <PageHero eyebrow="Free Sample Pack" title="See it. Touch it. Specify with confidence." lede="A curated pack of premium substrates, foil and emboss demonstrations, soft-touch laminations, and structural packaging samples — shipped free anywhere in the US." />
 
       <section className="py-16">

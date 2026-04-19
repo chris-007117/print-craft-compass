@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url><loc>https://veridiapress.com/</loc><changefreq>weekly</changefreq><priority>1.0</priority></url>
+  <url><loc>https://veridiapress.com/capabilities</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://veridiapress.com/capabilities/commercial-print</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://veridiapress.com/capabilities/packaging</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://veridiapress.com/capabilities/large-format</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://veridiapress.com/capabilities/finishing</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://veridiapress.com/industries</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://veridiapress.com/work</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://veridiapress.com/work/meddevice-surgical-kit</loc><changefreq>yearly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://veridiapress.com/work/lumen-ai-launch</loc><changefreq>yearly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://veridiapress.com/insights</loc><changefreq>weekly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://veridiapress.com/about</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://veridiapress.com/contact</loc><changefreq>yearly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://veridiapress.com/quote</loc><changefreq>yearly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://veridiapress.com/samples</loc><changefreq>yearly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://veridiapress.com/privacy</loc><changefreq>yearly</changefreq><priority>0.3</priority></url>
+  <url><loc>https://veridiapress.com/terms</loc><changefreq>yearly</changefreq><priority>0.3</priority></url>
+  <url><loc>https://veridiapress.com/accessibility</loc><changefreq>yearly</changefreq><priority>0.3</priority></url>
+  <url><loc>https://veridiapress.com/ai-policy</loc><changefreq>yearly</changefreq><priority>0.3</priority></url>
+</urlset>

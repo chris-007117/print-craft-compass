@@ -10,6 +10,8 @@ import capFinishing from "@/assets/cap-finishing.jpg";
 import facility from "@/assets/facility.jpg";
 import caseMed from "@/assets/case-meddevice.jpg";
 import { useState } from "react";
+import { SEO, orgJsonLd, localBusinessJsonLd, websiteJsonLd } from "@/components/SEO";
+import { AnimatedNumber } from "@/components/AnimatedNumber";
 
 const capabilities = [
   { slug: "commercial-print", title: "Commercial Print", desc: "Offset & digital. Annual reports, brochures, catalogs.", img: capCommercial },
@@ -26,10 +28,10 @@ const industries = [
 ];
 
 const testimonials = [
-  { name: "Lauren Park", title: "VP, Brand Marketing", co: "Meridian Health", quote: "Forma & Press is the partner we wish every vendor would be — color-managed, on-time, and obsessive about the small things that protect our brand." },
+  { name: "Lauren Park", title: "VP, Brand Marketing", co: "Meridian Health", quote: "Veridia Press is the partner we wish every vendor would be — color-managed, on-time, and obsessive about the small things that protect our brand." },
   { name: "Daniel Okafor", title: "Director of Packaging", co: "Stratos Bio", quote: "They retooled our launch packaging in 11 days. Our QA team called the result 'better than the prototype.' That never happens." },
-  { name: "Maya Hirsch", title: "Creative Director", co: "Verdant Skincare", quote: "The copper foil work on our anniversary edition is the best print job I've shipped in fifteen years. Period." },
-  { name: "James Carrillo", title: "COO", co: "NovaCardio", quote: "Compliance, traceability, G7 color — Forma handles all of it without us managing them. They feel like an extension of the team." },
+  { name: "Maya Hirsch", title: "Creative Director", co: "Verdant Skincare", quote: "The gold foil work on our anniversary edition is the best print job I've shipped in fifteen years. Period." },
+  { name: "James Carrillo", title: "COO", co: "NovaCardio", quote: "Compliance, traceability, G7 color — Veridia handles all of it without us managing them. They feel like an extension of the team." },
   { name: "Priya Nair", title: "Head of Studio", co: "Lumen AI", quote: "Editorial-grade craft at enterprise SLAs. We stopped shopping vendors three years ago." },
 ];
 
@@ -45,10 +47,16 @@ const Index = () => {
 
   return (
     <>
+      <SEO
+        title="Veridia Press — Premium Commercial Printing & Packaging"
+        description="Phoenix & Scottsdale commercial printer for craft beverage, cannabis, supplements, cosmetics, healthcare, and tech brands. G7 Master qualified labels, packaging, large format, and fulfillment."
+        path="/"
+        jsonLd={[orgJsonLd(), localBusinessJsonLd(), websiteJsonLd()]}
+      />
       {/* HERO */}
-      <section className="relative bg-charcoal text-bone overflow-hidden">
+      <section className="relative bg-charcoal text-bone overflow-hidden noise">
         <div className="absolute inset-0">
-          <img src={heroPress} alt="Premium offset printing press in motion" width={1920} height={1280} className="h-full w-full object-cover opacity-40" />
+          <img src={heroPress} alt="Premium offset printing press in motion" width={1920} height={1280} fetchPriority="high" className="h-full w-full object-cover opacity-40" />
           <div className="absolute inset-0 bg-gradient-to-r from-charcoal via-charcoal/80 to-transparent" />
         </div>
         {/* Sunburst */}
@@ -56,12 +64,12 @@ const Index = () => {
 
         <div className="relative container-x py-24 md:py-32 lg:py-40">
           <div className="max-w-3xl">
-            <span className="eyebrow text-copper">Forma & Press · Since 1987</span>
+            <span className="eyebrow text-copper">Veridia Press · Truth in print</span>
             <h1 className="display-xl mt-6 text-bone">
               Print,<br/><span className="text-copper">perfected.</span>
             </h1>
             <p className="mt-8 text-lg md:text-xl text-bone/75 max-w-xl leading-relaxed">
-              Bay Area commercial print and packaging for healthcare, technology, and consumer brands. G7 Master qualified. Family-owned, four decades deep.
+              Premium commercial print, labels, and packaging for craft beverage, cannabis, supplements, cosmetics, healthcare, and technology brands. G7 Master qualified. Phoenix · Scottsdale.
             </p>
             <div className="mt-10 flex flex-wrap gap-4">
               <Link to="/quote" className="btn-copper">Request a Quote <ArrowRight className="h-4 w-4" /></Link>
@@ -175,7 +183,7 @@ const Index = () => {
       <section className="py-20 md:py-28">
         <div className="container-x grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           <div className="relative aspect-[4/3] bg-charcoal overflow-hidden group cursor-pointer">
-            <img src={facility} alt="Forma & Press production facility" width={1600} height={1024} loading="lazy" className="h-full w-full object-cover" />
+            <img src={facility} alt="Veridia Press production facility" width={1600} height={1024} loading="lazy" className="h-full w-full object-cover" />
             <div className="absolute inset-0 bg-charcoal/40 flex items-center justify-center">
               <div className="h-20 w-20 rounded-full bg-copper flex items-center justify-center group-hover:scale-110 transition-transform">
                 <Play className="h-7 w-7 text-bone fill-bone ml-1" />
@@ -230,13 +238,15 @@ const Index = () => {
 
           <div className="mt-12 grid grid-cols-2 lg:grid-cols-4 gap-6 text-center pt-12 border-t border-bone/10">
             {[
-              { n: "1987", l: "Family-owned since" },
-              { n: "38", l: "Years in business" },
-              { n: "4.2M", l: "Impressions weekly" },
-              { n: "320+", l: "Active brand clients" },
+              { v: 1987, suffix: "", decimals: 0, l: "Family-rooted since" },
+              { v: 38, suffix: "", decimals: 0, l: "Years of craft" },
+              { v: 4.2, suffix: "M", decimals: 1, l: "Impressions weekly" },
+              { v: 320, suffix: "+", decimals: 0, l: "Active brand clients" },
             ].map(s => (
               <div key={s.l}>
-                <p className="font-display text-4xl md:text-5xl text-copper">{s.n}</p>
+                <p className="font-display text-4xl md:text-5xl text-copper">
+                  <AnimatedNumber value={s.v} suffix={s.suffix} decimals={s.decimals} />
+                </p>
                 <p className="text-xs uppercase tracking-wider text-bone/60 mt-2">{s.l}</p>
               </div>
             ))}
@@ -263,8 +273,9 @@ const Index = () => {
             </div>
           </div>
 
-          <div className="mt-12 bg-background p-8 md:p-14 max-w-4xl">
-            <p className="font-display text-2xl md:text-3xl leading-snug text-foreground">
+          <div className="mt-12 bg-background p-8 md:p-14 max-w-4xl relative overflow-hidden">
+            <span aria-hidden className="absolute -top-6 left-4 md:-top-10 md:left-8 font-display text-[140px] md:text-[200px] leading-none text-copper/15 select-none pointer-events-none">"</span>
+            <p className="font-display text-2xl md:text-3xl leading-snug text-foreground relative">
               "{testimonials[tIdx].quote}"
             </p>
             <div className="mt-8 flex items-center justify-between flex-wrap gap-4">

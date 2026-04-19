@@ -3,6 +3,7 @@ import { PageHero } from "@/components/PageHero";
 import caseMed from "@/assets/case-meddevice.jpg";
 import caseTech from "@/assets/case-tech.jpg";
 import { ArrowRight } from "lucide-react";
+import { SEO, breadcrumbJsonLd, articleJsonLd } from "@/components/SEO";
 
 const cases: Record<string, any> = {
   "meddevice-surgical-kit": {
@@ -21,7 +22,7 @@ const cases: Record<string, any> = {
       { n: "14 days", l: "Production cycle" },
       { n: "91%", l: "Drop in rep complaints" },
     ],
-    quote: { text: "Forma understood the clinical environment, the regulatory environment, and our brand — at the same time. That combination doesn't exist anywhere else we've sourced.", who: "Director of Packaging, MedDevice Co." },
+    quote: { text: "Veridia understood the clinical environment, the regulatory environment, and our brand — at the same time. That combination doesn't exist anywhere else we've sourced.", who: "Director of Packaging, MedDevice Co." },
   },
   "lumen-ai-launch": {
     eyebrow: "Case Study · Technology",
@@ -29,7 +30,7 @@ const cases: Record<string, any> = {
     lede: "1.2 million units of soft-touch matte packaging with copper foil details, manufactured and merged-in-transit across 11 countries for a launch date that couldn't slip.",
     img: caseTech,
     challenge: "Lumen AI's first consumer hardware product needed a launch-ready packaging program with the tactile premium their software brand had earned. The constraint: 1.2 million units, 11 destination markets, four language SKUs per market, and a fixed launch date 19 weeks out.",
-    approach: "We split production across both Forma facilities with mirrored color profiles, partnered with a vetted Asia partner for in-region final assembly, and built an API-driven workflow that pulled SKU configuration from Lumen's PIM directly into our prepress queue. Soft-touch matte SBS, copper foil 'L' monogram, multi-language insert collation, and EPR-compliant disposal labeling per market.",
+    approach: "We split production across both Veridia facilities with mirrored color profiles, partnered with a vetted Asia partner for in-region final assembly, and built an API-driven workflow that pulled SKU configuration from Lumen's PIM directly into our prepress queue. Soft-touch matte SBS, gold foil 'L' monogram, multi-language insert collation, and EPR-compliant disposal labeling per market.",
     outcome: "100% of launch volume shipped in-window across all 11 markets. Zero re-prints. Zero color complaints. Lumen extended the program for refresh hardware launches in 2025 and 2026.",
     stats: [
       { n: "1.2M", l: "Units produced" },
@@ -50,6 +51,20 @@ const CaseStudy = () => {
 
   return (
     <>
+      <SEO
+        title={`${c.title} — Case Study`}
+        description={c.lede}
+        path={`/work/${slug}`}
+        type="article"
+        jsonLd={[
+          breadcrumbJsonLd([
+            { name: "Home", path: "/" },
+            { name: "Work", path: "/work" },
+            { name: c.title, path: `/work/${slug}` },
+          ]),
+          articleJsonLd(c.title, c.lede, `/work/${slug}`, "2026-01-15"),
+        ]}
+      />
       <PageHero eyebrow={c.eyebrow} title={c.title} lede={c.lede} />
 
       <section className="py-16">
