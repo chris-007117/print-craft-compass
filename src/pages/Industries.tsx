@@ -30,7 +30,7 @@ const tabs = [
   {
     id: "education", label: "Education", Icon: GraduationCap,
     headline: "For institutions that take recruitment seriously.",
-    body: "Independent schools, colleges, and universities choose Forma & Press for viewbooks, capital campaign packages, alumni magazines, and admissions materials. Certified-fiber substrates, archival inks, and binding methods that survive a decade in a parent's bookshelf.",
+    body: "Independent schools, colleges, and universities choose Veridia Press for viewbooks, capital campaign packages, alumni magazines, and admissions materials. Certified-fiber substrates, archival inks, and binding methods that survive a decade in a parent's bookshelf.",
     bullets: ["Viewbooks and admissions packages", "Capital campaign collateral", "Alumni magazines and annual reports", "Certified-fiber substrates", "Archival-grade binding"],
     clients: ["Marin Academy", "Castilleja School", "St. Ignatius Prep", "Mills College"],
   },

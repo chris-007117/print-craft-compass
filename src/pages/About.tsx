@@ -82,9 +82,9 @@ const About = () => (
     <section className="bg-charcoal text-bone py-20">
       <div className="container-x text-center">
         <Users className="h-10 w-10 text-copper mx-auto" />
-        <h2 className="display-md mt-6 max-w-3xl mx-auto">Still family-owned. Still answering the phone.</h2>
+        <h2 className="display-md mt-6 max-w-3xl mx-auto">Family-owned. Built to last a century.</h2>
         <p className="mt-6 text-bone/75 max-w-2xl mx-auto">
-          Eleanor's daughter Mara Forma runs the company today. David's grandson Theo manages the digital press floor. The Forma family has never sold and never will.
+          Veridia is privately held by its founding family. No private equity, no exit calendar — just a long-horizon commitment to building the next great American print and packaging company.
         </p>
       </div>
     </section>

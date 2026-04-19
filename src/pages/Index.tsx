@@ -183,7 +183,7 @@ const Index = () => {
       <section className="py-20 md:py-28">
         <div className="container-x grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           <div className="relative aspect-[4/3] bg-charcoal overflow-hidden group cursor-pointer">
-            <img src={facility} alt="Forma & Press production facility" width={1600} height={1024} loading="lazy" className="h-full w-full object-cover" />
+            <img src={facility} alt="Veridia Press production facility" width={1600} height={1024} loading="lazy" className="h-full w-full object-cover" />
             <div className="absolute inset-0 bg-charcoal/40 flex items-center justify-center">
               <div className="h-20 w-20 rounded-full bg-copper flex items-center justify-center group-hover:scale-110 transition-transform">
                 <Play className="h-7 w-7 text-bone fill-bone ml-1" />

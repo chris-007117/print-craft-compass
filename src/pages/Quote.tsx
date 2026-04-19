@@ -220,7 +220,7 @@ const Quote = () => {
                   <Field label="Email *" error={errors.email}><input type="email" className={inputCls} value={data.email} onChange={e => update("email", e.target.value)} maxLength={255}/></Field>
                   <Field label="Phone"><input type="tel" className={inputCls} value={data.phone} onChange={e => update("phone", e.target.value)} maxLength={40}/></Field>
                 </div>
-                <p className="text-xs text-muted-foreground pt-2">By submitting you agree to be contacted by Forma & Press regarding this quote. We never share your information.</p>
+                <p className="text-xs text-muted-foreground pt-2">By submitting you agree to be contacted by Veridia Press regarding this quote. We never share your information.</p>
               </div>
             )}
           </div>
