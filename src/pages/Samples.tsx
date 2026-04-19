@@ -41,7 +41,19 @@ const Samples = () => {
       return;
     }
     setErrors({}); setLoading(true);
-    const { error } = await supabase.from("sample_requests").insert(r.data);
+    const payload = {
+      name: r.data.name,
+      email: r.data.email,
+      company: r.data.company || null,
+      industry: r.data.industry || null,
+      address_line1: r.data.address_line1,
+      address_line2: r.data.address_line2 || null,
+      city: r.data.city,
+      state: r.data.state,
+      postal_code: r.data.postal_code,
+      country: r.data.country,
+    };
+    const { error } = await supabase.from("sample_requests").insert(payload);
     setLoading(false);
     if (error) { toast({ title: "Couldn't submit", description: error.message, variant: "destructive" }); return; }
     setSubmitted(true);

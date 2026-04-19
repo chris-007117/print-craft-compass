@@ -48,7 +48,15 @@ const Contact = () => {
         if (upErr) throw upErr;
         fileUrl = path;
       }
-      const { error } = await supabase.from("contacts").insert({ ...r.data, file_url: fileUrl });
+      const payload = {
+        name: r.data.name,
+        email: r.data.email,
+        company: r.data.company || null,
+        subject: r.data.subject,
+        message: r.data.message,
+        file_url: fileUrl,
+      };
+      const { error } = await supabase.from("contacts").insert(payload);
       if (error) throw error;
       setDone(true);
     } catch (err: any) {
