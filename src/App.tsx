@@ -11,7 +11,10 @@ import CapabilityDetail from "./pages/CapabilityDetail";
 import Industries from "./pages/Industries";
 import Work from "./pages/Work";
 import CaseStudy from "./pages/CaseStudy";
-import Insights from "./pages/Insights";
+import Blog from "./pages/Blog";
+import BlogPost from "./pages/BlogPost";
+import BlogTaxonomy from "./pages/BlogTaxonomy";
+import InsightsRedirect from "./pages/InsightsRedirect";
 import Quote from "./pages/Quote";
 import Samples from "./pages/Samples";
 import Contact from "./pages/Contact";
@@ -38,7 +41,11 @@ const App = () => (
             <Route path="/industries" element={<Industries />} />
             <Route path="/work" element={<Work />} />
             <Route path="/work/:slug" element={<CaseStudy />} />
-            <Route path="/insights" element={<Insights />} />
+            <Route path="/blog" element={<Blog />} />
+            <Route path="/blog/category/:category" element={<BlogTaxonomy kind="category" />} />
+            <Route path="/blog/tag/:tag" element={<BlogTaxonomy kind="tag" />} />
+            <Route path="/blog/:slug" element={<BlogPost />} />
+            <Route path="/insights" element={<InsightsRedirect />} />
             <Route path="/quote" element={<Quote />} />
             <Route path="/samples" element={<Samples />} />
             <Route path="/contact" element={<Contact />} />

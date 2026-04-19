@@ -14,6 +14,81 @@ export type Database = {
   }
   public: {
     Tables: {
+      blog_posts: {
+        Row: {
+          author_avatar_url: string | null
+          author_name: string | null
+          body: string
+          category: string | null
+          created_at: string | null
+          excerpt: string | null
+          featured: boolean | null
+          focus_keyword: string | null
+          hero_image_alt: string | null
+          hero_image_url: string | null
+          id: string
+          meta_description: string
+          meta_title: string | null
+          published_at: string | null
+          reading_time_minutes: number | null
+          scheduled_for: string | null
+          slug: string
+          status: string | null
+          tags: string[] | null
+          title: string
+          updated_at: string | null
+          view_count: number | null
+        }
+        Insert: {
+          author_avatar_url?: string | null
+          author_name?: string | null
+          body: string
+          category?: string | null
+          created_at?: string | null
+          excerpt?: string | null
+          featured?: boolean | null
+          focus_keyword?: string | null
+          hero_image_alt?: string | null
+          hero_image_url?: string | null
+          id?: string
+          meta_description: string
+          meta_title?: string | null
+          published_at?: string | null
+          reading_time_minutes?: number | null
+          scheduled_for?: string | null
+          slug: string
+          status?: string | null
+          tags?: string[] | null
+          title: string
+          updated_at?: string | null
+          view_count?: number | null
+        }
+        Update: {
+          author_avatar_url?: string | null
+          author_name?: string | null
+          body?: string
+          category?: string | null
+          created_at?: string | null
+          excerpt?: string | null
+          featured?: boolean | null
+          focus_keyword?: string | null
+          hero_image_alt?: string | null
+          hero_image_url?: string | null
+          id?: string
+          meta_description?: string
+          meta_title?: string | null
+          published_at?: string | null
+          reading_time_minutes?: number | null
+          scheduled_for?: string | null
+          slug?: string
+          status?: string | null
+          tags?: string[] | null
+          title?: string
+          updated_at?: string | null
+          view_count?: number | null
+        }
+        Relationships: []
+      }
       contacts: {
         Row: {
           company: string | null
@@ -163,10 +238,84 @@ export type Database = {
       }
     }
     Views: {
-      [_ in never]: never
+      published_blog_posts: {
+        Row: {
+          author_avatar_url: string | null
+          author_name: string | null
+          body: string | null
+          category: string | null
+          created_at: string | null
+          excerpt: string | null
+          featured: boolean | null
+          focus_keyword: string | null
+          hero_image_alt: string | null
+          hero_image_url: string | null
+          id: string | null
+          meta_description: string | null
+          meta_title: string | null
+          published_at: string | null
+          reading_time_minutes: number | null
+          scheduled_for: string | null
+          slug: string | null
+          status: string | null
+          tags: string[] | null
+          title: string | null
+          updated_at: string | null
+          view_count: number | null
+        }
+        Insert: {
+          author_avatar_url?: string | null
+          author_name?: string | null
+          body?: string | null
+          category?: string | null
+          created_at?: string | null
+          excerpt?: string | null
+          featured?: boolean | null
+          focus_keyword?: string | null
+          hero_image_alt?: string | null
+          hero_image_url?: string | null
+          id?: string | null
+          meta_description?: string | null
+          meta_title?: string | null
+          published_at?: string | null
+          reading_time_minutes?: number | null
+          scheduled_for?: string | null
+          slug?: string | null
+          status?: string | null
+          tags?: string[] | null
+          title?: string | null
+          updated_at?: string | null
+          view_count?: number | null
+        }
+        Update: {
+          author_avatar_url?: string | null
+          author_name?: string | null
+          body?: string | null
+          category?: string | null
+          created_at?: string | null
+          excerpt?: string | null
+          featured?: boolean | null
+          focus_keyword?: string | null
+          hero_image_alt?: string | null
+          hero_image_url?: string | null
+          id?: string | null
+          meta_description?: string | null
+          meta_title?: string | null
+          published_at?: string | null
+          reading_time_minutes?: number | null
+          scheduled_for?: string | null
+          slug?: string | null
+          status?: string | null
+          tags?: string[] | null
+          title?: string | null
+          updated_at?: string | null
+          view_count?: number | null
+        }
+        Relationships: []
+      }
     }
     Functions: {
-      [_ in never]: never
+      increment_post_view: { Args: { post_slug: string }; Returns: undefined }
     }
     Enums: {
       [_ in never]: never
